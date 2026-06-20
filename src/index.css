@@ -469,10 +469,15 @@
   }
 
   .logo-circle {
-    @apply relative flex h-11 w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-full no-underline;
+    @apply relative inline-flex h-11 w-fit shrink-0 items-center justify-center rounded-full px-3 no-underline;
     background: var(--nav-glass);
     backdrop-filter: blur(20px);
     transition: background-color 0.35s var(--ease-augen);
+  }
+
+  .logo-circle .logo-mark {
+    @apply block h-[18px] w-auto max-w-none object-contain;
+    flex: none;
   }
 
   .logo-mark {
@@ -483,6 +488,11 @@
   .nav-shell[data-theme="light"] .logo-mark {
     mix-blend-mode: normal;
     filter: brightness(0);
+  }
+
+  .nav-shell[data-theme="dark"] .logo-mark {
+    mix-blend-mode: normal;
+    filter: brightness(0) invert(1);
   }
 
   .section-dark .logo-mark {
@@ -740,12 +750,6 @@
 
   .hero-cta .btn-primary {
     @apply w-full sm:w-auto;
-  }
-
-  @media (max-width: 359px) {
-    .logo-circle {
-      width: 3.5rem;
-    }
   }
 
   .hero-desc {

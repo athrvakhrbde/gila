@@ -45,7 +45,7 @@ export function Navbar() {
     >
       <div className="container-site nav-bar">
         <a href="#" className="logo-circle" aria-label={`${BRAND} home`}>
-          <GilaLogo className="h-[18px] w-auto" />
+          <GilaLogo />
         </a>
 
         <nav className="nav-pill" aria-label="Main">
