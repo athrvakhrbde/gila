@@ -1268,6 +1268,9 @@
     object-fit: cover;
     object-position: top center;
   }
+  .programme-hero-media--pcos img {
+    max-height: min(62vh, 36rem);
+  }
   .programme-hero-content {
     @apply flex flex-col gap-4 py-8 sm:py-10;
   }

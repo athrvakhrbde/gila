@@ -14,7 +14,7 @@ function ProgrammeHero({ page }: { page: (typeof programmePages)[ProgrammeSlug] 
 
   return (
     <header className="programme-hero" data-nav-theme="light">
-      <div className="programme-hero-media">
+      <div className={`programme-hero-media ${page.slug === "pcos" ? "programme-hero-media--pcos" : ""}`}>
         <img src={page.image} alt="" loading="eager" decoding="async" />
       </div>
       <div className="container-site programme-hero-content">
