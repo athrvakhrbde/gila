@@ -21,7 +21,7 @@ export function Hero() {
           <motion.p className="hero-desc mt-4 text-pretty" variants={fadeUp}>
             Weight loss and PCOS programmes, built for life in India.
           </motion.p>
-          <motion.div className="mt-7" variants={fadeUp}>
+          <motion.div className="hero-cta mt-7" variants={fadeUp}>
             {hasConsultLink ? (
               <Button href={href} size="lg" animated={false}>
                 {CTA_LABEL_HERO}

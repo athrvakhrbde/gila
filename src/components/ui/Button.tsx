@@ -42,7 +42,7 @@ export function Button(props: AsButton | AsLink) {
     animated = variant === "primary",
     ...rest
   } = props;
-  const cls = `${variants[variant]} ${sizes[size]} ${className}`.trim();
+  const cls = `${variants[variant]} ${sizes[size]} ${animated && variant === "primary" ? "is-animated" : ""} ${className}`.trim();
   const label = <Label animated={animated}>{children}</Label>;
 
   if ("href" in props && props.href) {

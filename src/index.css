@@ -88,8 +88,9 @@
     background: var(--color-bg-header);
   }
   .icon-box-dark {
-    @apply border-border-onDark text-accent;
-    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-fg-on-dark);
+    border-color: rgba(0, 252, 238, 0.45);
+    background: rgba(0, 252, 238, 0.12);
   }
 
   .section-divider {
@@ -288,12 +289,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex min-h-[44px] w-full items-center justify-center gap-2 overflow-hidden rounded-[54px] bg-accent px-[14px] leading-none no-underline sm:w-auto;
+    @apply inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[54px] bg-accent px-[14px] leading-none no-underline sm:w-auto;
     color: var(--color-on-accent);
     font-size: var(--text-sm);
     font-weight: 350;
     letter-spacing: -0.02em;
     transition: background-color 0.3s, color 0.3s, opacity 0.2s;
+  }
+  .btn-primary.is-animated {
+    @apply overflow-hidden;
   }
   .btn-primary:hover {
     opacity: 0.92;
@@ -448,8 +452,14 @@
   }
 
   .nav-cta {
-    @apply shrink-0 !px-4;
+    @apply shrink-0 !w-auto overflow-visible whitespace-nowrap !px-3;
     font-size: var(--text-sm) !important;
+    min-width: 3.25rem;
+  }
+  @media (min-width: 420px) {
+    .nav-cta {
+      @apply !px-4;
+    }
   }
   .nav-cta-full {
     @apply hidden min-[420px]:inline;
@@ -476,8 +486,12 @@
   }
 
   .section-dark .logo-mark {
-    mix-blend-mode: screen;
-    filter: none;
+    mix-blend-mode: normal;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-logo {
+    @apply w-fit self-start;
   }
 
   .surface-card {
@@ -718,6 +732,20 @@
 
   .hero-content {
     @apply relative z-[2] w-full min-w-0;
+  }
+
+  .hero-cta {
+    @apply w-fit max-w-full;
+  }
+
+  .hero-cta .btn-primary {
+    @apply w-full sm:w-auto;
+  }
+
+  @media (max-width: 359px) {
+    .logo-circle {
+      width: 3.5rem;
+    }
   }
 
   .hero-desc {

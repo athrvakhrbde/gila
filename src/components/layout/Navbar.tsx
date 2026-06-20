@@ -115,7 +115,7 @@ export function Footer() {
   return (
     <footer className="section-dark border-t border-border-onDark">
       <div className="container-site footer-inner">
-        <GilaLogo className="h-[15px] w-auto" />
+        <GilaLogo className="footer-logo h-[15px] w-auto" />
 
         <div className="footer-links">
           {navLinks.map((l) => (

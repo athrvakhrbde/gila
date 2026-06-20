@@ -10,7 +10,7 @@ export function GilaLogo({ className = "h-[18px] w-auto" }: Props) {
       alt="gila"
       width={72}
       height={28}
-      className={`logo-mark ${className}`.trim()}
+      className={`logo-mark block w-fit max-w-none shrink-0 ${className}`.trim()}
     />
   );
 }
