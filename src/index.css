@@ -457,16 +457,16 @@
     font-size: var(--text-sm) !important;
     min-width: 3.25rem;
   }
-  @media (min-width: 420px) {
+  @media (min-width: 768px) {
     .nav-cta {
       @apply !px-4;
     }
   }
   .nav-cta-full {
-    @apply hidden min-[420px]:inline;
+    @apply hidden md:inline;
   }
   .nav-cta-short {
-    @apply min-[420px]:hidden;
+    @apply md:hidden;
   }
 
   .logo-circle {
@@ -503,6 +503,10 @@
 
   .footer-logo {
     @apply w-fit self-start;
+  }
+
+  .footer-logo-link {
+    @apply w-fit self-start no-underline;
   }
 
   .surface-card {

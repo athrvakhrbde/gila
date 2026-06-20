@@ -44,7 +44,7 @@ export function Navbar() {
       data-theme={theme}
     >
       <div className="container-site nav-bar">
-        <a href="#" className="logo-circle" aria-label={`${BRAND} home`}>
+        <a href="#home" className="logo-circle" aria-label={`${BRAND} home`}>
           <GilaLogo />
         </a>
 
@@ -115,7 +115,9 @@ export function Footer() {
   return (
     <footer className="section-dark border-t border-border-onDark">
       <div className="container-site footer-inner">
-        <GilaLogo className="footer-logo h-[15px] w-auto" />
+        <a href="#home" className="footer-logo-link" aria-label={`${BRAND} home`}>
+          <GilaLogo className="footer-logo h-[15px] w-auto" />
+        </a>
 
         <div className="footer-links">
           {navLinks.map((l) => (

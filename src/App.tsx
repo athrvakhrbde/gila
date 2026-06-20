@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navbar, Footer } from "./components/layout/Navbar";
 import { Hero } from "./components/sections/Hero";
 import { ChooseProgram } from "./components/sections/ChooseProgram";
@@ -11,6 +12,25 @@ import { FAQ } from "./components/sections/FAQ";
 import { ConsultCTA } from "./components/sections/ConsultCTA";
 
 function App() {
+  useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    const hash = window.location.hash;
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    const id = decodeURIComponent(hash.slice(1));
+    if (id) {
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView();
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-bg text-fg">
       <Navbar />
