@@ -9,7 +9,7 @@ export const programs = {
     description:
       "Lose fat sustainably through personalised nutrition, coaching, and medical guidance.",
     benefits: ["Personalised plan", "Weekly coaching", "Sustainable results"],
-    exploreHref: "#weight-loss",
+    exploreHref: "/programmes/weight-loss",
   },
   pcos: {
     id: "pcos",
@@ -18,9 +18,90 @@ export const programs = {
     title: "PCOS Reversal",
     description: "Regain hormonal balance naturally with doctor-led, whole-person care.",
     benefits: ["Period regularity", "Hormone balance", "Fertility support"],
-    exploreHref: "#pcos",
+    exploreHref: "/programmes/pcos",
   },
 } as const;
+
+export const programmePages = {
+  "weight-loss": {
+    slug: "weight-loss",
+    icon: "weight-loss" as IconName,
+    image: "/weight-loss-program.png",
+    title: "Weight Loss",
+    tagline: "Medically guided fat loss built for life in India.",
+    overview:
+      "The gila Weight Loss programme combines doctor oversight, personalised Indian nutrition, and weekly coaching. We focus on sustainable change, not quick fixes or restrictive templates.",
+    whoItsFor: [
+      "Adults seeking medically supervised fat loss",
+      "People who have tried diets without lasting results",
+      "Anyone who wants a plan built around Indian food and daily routines",
+      "Those ready for weekly accountability and clinical support",
+    ],
+    includes: [
+      {
+        icon: "stethoscope" as IconName,
+        title: "Doctor consultations",
+        text: "Clinical review of your health history, goals, and any medication needs.",
+      },
+      {
+        icon: "nutrition" as IconName,
+        title: "Personalised nutrition",
+        text: "Meal guidance built around what you already eat, adjusted gradually over time.",
+      },
+      {
+        icon: "coaching" as IconName,
+        title: "Weekly coaching",
+        text: "Regular check-ins to build habits, track progress, and stay accountable.",
+      },
+      {
+        icon: "tracking" as IconName,
+        title: "Progress tracking",
+        text: "Weight, energy, and key markers reviewed so your plan adapts as you improve.",
+      },
+    ],
+    faqId: "weight-loss" as const,
+  },
+  "pcos": {
+    slug: "pcos",
+    icon: "pcos" as IconName,
+    image: "/pcos-program.png",
+    title: "PCOS Reversal",
+    tagline: "Whole-person hormonal care for women with PCOS.",
+    overview:
+      "The gila PCOS programme addresses weight, insulin resistance, cycle irregularity, and energy together. A doctor leads your care, with nutrition and coaching support tailored to hormonal health.",
+    whoItsFor: [
+      "Women diagnosed with PCOS or suspected hormonal imbalance",
+      "Those with irregular periods, weight gain, or insulin resistance",
+      "Women seeking care beyond a generic diet or supplement plan",
+      "Anyone wanting doctor-led support at any life stage",
+    ],
+    includes: [
+      {
+        icon: "stethoscope" as IconName,
+        title: "Doctor-led care",
+        text: "Clinical assessment of your hormonal and metabolic profile with ongoing oversight.",
+      },
+      {
+        icon: "nutrition" as IconName,
+        title: "Hormone-focused nutrition",
+        text: "Meal plans designed to support insulin sensitivity and cycle regularity.",
+      },
+      {
+        icon: "cycles" as IconName,
+        title: "Cycle & symptom tracking",
+        text: "Regular review of periods, energy, and related symptoms over time.",
+      },
+      {
+        icon: "coaching" as IconName,
+        title: "Coaching & support",
+        text: "Weekly guidance to build sustainable routines and stay on track between visits.",
+      },
+    ],
+    faqId: "pcos" as const,
+  },
+} as const;
+
+export type ProgrammeSlug = keyof typeof programmePages;
 
 export const trustMetrics = [
   { label: "Doctor-led", value: "Clinical oversight" },

@@ -19,9 +19,9 @@ export const images = {
 export type NavLink = { label: string; href: string };
 
 export const navLinks: NavLink[] = [
-  { label: "Programmes", href: "#programs" },
-  { label: "Experts", href: "#experts" },
-  { label: "FAQs", href: "#faq" },
+  { label: "Programmes", href: "/#programs" },
+  { label: "Experts", href: "/#experts" },
+  { label: "FAQs", href: "/#faq" },
 ];
 
 export const hasConsultLink = Boolean(CONSULT_URL);

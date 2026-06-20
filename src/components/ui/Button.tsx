@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { AnimatedText } from "./AnimatedText";
 
 type Variant = "primary" | "secondary" | "ghost";
@@ -46,7 +47,14 @@ export function Button(props: AsButton | AsLink) {
   const label = <Label animated={animated}>{children}</Label>;
 
   if ("href" in props && props.href) {
-    const { href, ...linkRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement>;
+    const { href, ...linkRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+    if (href.startsWith("/") && !href.startsWith("//")) {
+      return (
+        <Link to={href} className={cls} {...linkRest}>
+          {label}
+        </Link>
+      );
+    }
     return (
       <a href={href} className={cls} {...linkRest}>
         {label}

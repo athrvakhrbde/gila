@@ -1252,4 +1252,41 @@
   .bg-accent .arrow-circle {
     border-color: var(--color-accent-text);
   }
+
+  /* Programme detail pages */
+  .programme-hero {
+    @apply bg-bg-alt;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 4.75rem);
+  }
+  .programme-hero-media {
+    @apply w-full overflow-hidden;
+    background: var(--color-bg-dark);
+  }
+  .programme-hero-media img {
+    @apply block h-auto w-full;
+    max-height: min(52vh, 28rem);
+    object-fit: cover;
+    object-position: top center;
+  }
+  .programme-hero-content {
+    @apply flex flex-col gap-4 py-8 sm:py-10;
+  }
+  .programme-back-link {
+    @apply body-sm mb-2 inline-flex w-fit text-fg-muted no-underline transition-opacity hover:opacity-60;
+  }
+  .programme-hero-title {
+    font-size: var(--text-display);
+    @apply leading-[1.15] text-balance;
+    letter-spacing: -0.02em;
+  }
+  .programme-hero-tagline {
+    font-size: var(--text-md);
+    @apply max-w-xl leading-[1.5] text-fg-muted;
+  }
+  .programme-hero-actions {
+    @apply pt-2;
+  }
+  .programme-hero-actions .btn-primary {
+    @apply w-full sm:w-auto;
+  }
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useNavTheme } from "../../hooks/useNavTheme";
 import { BRAND, consultHref, CTA_LABEL, hasConsultLink, navLinks } from "../../lib/constants";
 import { augenEase } from "../../lib/motion";
@@ -44,15 +45,15 @@ export function Navbar() {
       data-theme={theme}
     >
       <div className="container-site nav-bar">
-        <a href="#home" className="logo-circle" aria-label={`${BRAND} home`}>
+        <Link to="/" className="logo-circle" aria-label={`${BRAND} home`}>
           <GilaLogo />
-        </a>
+        </Link>
 
         <nav className="nav-pill" aria-label="Main">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link">
+            <Link key={l.href} to={l.href} className="nav-link">
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -89,14 +90,14 @@ export function Navbar() {
           >
             <nav aria-label="Mobile">
               {navLinks.map((l) => (
-                <a
+                <Link
                   key={l.href}
-                  href={l.href}
+                  to={l.href}
                   className="nav-mobile-link"
                   onClick={() => setMenuOpen(false)}
                 >
                   {l.label}
-                </a>
+                </Link>
               ))}
               {hasConsultLink && (
                 <a href={href} className="nav-mobile-link" onClick={() => setMenuOpen(false)}>
@@ -115,15 +116,15 @@ export function Footer() {
   return (
     <footer className="section-dark border-t border-border-onDark">
       <div className="container-site footer-inner">
-        <a href="#home" className="footer-logo-link" aria-label={`${BRAND} home`}>
+        <Link to="/" className="footer-logo-link" aria-label={`${BRAND} home`}>
           <GilaLogo className="footer-logo h-[15px] w-auto" />
-        </a>
+        </Link>
 
         <div className="footer-links">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="footer-link">
+            <Link key={l.href} to={l.href} className="footer-link">
               {l.label}
-            </a>
+            </Link>
           ))}
           {hasConsultLink && (
             <a href={consultHref()} className="footer-link">
