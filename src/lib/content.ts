@@ -4,6 +4,7 @@ export const programs = {
   weightLoss: {
     id: "weight-loss",
     icon: "weight-loss" as IconName,
+    image: "/weight-loss-program.png",
     title: "Weight Loss",
     description:
       "Lose fat sustainably through personalised nutrition, coaching, and medical guidance.",
@@ -13,6 +14,7 @@ export const programs = {
   pcos: {
     id: "pcos",
     icon: "pcos" as IconName,
+    image: "/pcos-program.png",
     title: "PCOS Reversal",
     description: "Regain hormonal balance naturally with doctor-led, whole-person care.",
     benefits: ["Period regularity", "Hormone balance", "Fertility support"],

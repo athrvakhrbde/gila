@@ -70,11 +70,12 @@
     list-style: none;
   }
   .feature-list-item {
-    @apply flex items-start gap-2.5 leading-[1.5] text-fg-muted;
+    @apply relative leading-[1.5] text-fg-muted;
+    padding-left: 1.375rem;
     font-size: var(--text-md);
   }
   .feature-list-icon {
-    @apply mt-0.5 shrink-0;
+    @apply absolute left-0 top-[0.2em] shrink-0;
     color: var(--color-accent-text);
   }
   .section-dark .feature-list-icon,
@@ -1030,13 +1031,32 @@
     @apply h-full rounded-[10px] border border-border-light p-6 sm:p-8;
     background: var(--color-bg-header);
   }
+  .program-card-has-media {
+    @apply overflow-hidden p-0;
+  }
+  .program-card-media {
+    aspect-ratio: 920 / 530;
+    @apply w-full overflow-hidden;
+    background: var(--color-bg-dark);
+  }
+  .program-card-media img {
+    @apply h-full w-full object-cover;
+    object-position: top center;
+  }
+  .program-card-body {
+    @apply flex flex-col gap-4 p-5 sm:p-6;
+  }
   .program-card-title {
     font-size: var(--text-xl);
     @apply leading-[1.25];
   }
   .program-card-desc {
-    @apply mt-3 leading-[1.5] text-fg-muted;
+    @apply leading-[1.5] text-fg-muted;
     font-size: var(--text-base);
+    padding-left: 1.375rem;
+  }
+  .program-card .feature-list {
+    @apply gap-2.5;
   }
 
   /* Pillar / feature cards */

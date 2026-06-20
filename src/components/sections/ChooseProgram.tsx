@@ -6,23 +6,25 @@ import { RevealItem } from "../ui/Reveal";
 import { SectionCTA } from "../ui/SectionCTA";
 import { SectionShell } from "../ui/SectionShell";
 
-function ProgramCard({
-  id,
-  icon,
-  title,
-  description,
-  benefits,
-  exploreHref,
-}: (typeof programs)[keyof typeof programs]) {
+function ProgramCard(props: (typeof programs)[keyof typeof programs]) {
+  const { id, icon, title, description, benefits, exploreHref } = props;
+  const image = "image" in props ? props.image : undefined;
   return (
-    <article id={id} className="program-card">
-      <IconBox name={icon} className="mb-5" />
-      <h3 className="program-card-title">{title}</h3>
-      <p className="program-card-desc">{description}</p>
-      <FeatureList items={benefits} />
-      <Button href={exploreHref} variant="secondary" animated={false} className="mt-6">
-        Explore programme
-      </Button>
+    <article id={id} className={`program-card ${image ? "program-card-has-media" : ""}`}>
+      {image && (
+        <div className="program-card-media">
+          <img src={image} alt="" loading="lazy" decoding="async" />
+        </div>
+      )}
+      <div className="program-card-body">
+        {!image && <IconBox name={icon} className="mb-5" />}
+        <h3 className="program-card-title">{title}</h3>
+        <p className="program-card-desc">{description}</p>
+        <FeatureList items={benefits} />
+        <Button href={exploreHref} variant="secondary" animated={false} className="self-start">
+          Explore programme
+        </Button>
+      </div>
     </article>
   );
 }
